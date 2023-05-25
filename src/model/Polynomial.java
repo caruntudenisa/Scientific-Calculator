@@ -8,6 +8,7 @@ public class Polynomial {
         this.coefficients.putAll(coefficients);
     }
 
+    //clasa polinomyal cu un atribut de tip hashmap
     public HashMap<Integer, Double> getCoefficients() {
         return coefficients;
     }

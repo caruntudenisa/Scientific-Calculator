@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Controller {
-    private View view;
+    private View view; //legatura intre view si operatiile
     public Controller(View view){
         this.view=view;
         this.view.setAdditionButtonActionListener(new additionButton());

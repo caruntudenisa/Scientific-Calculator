@@ -12,15 +12,15 @@ public class Operations {
         result.putAll(P1.getCoefficients());
 
         for(Map.Entry<Integer,Double> newentry: P2.coefficients.entrySet()){
-            Integer key= newentry.getKey();
-            Double value= newentry.getValue();
-                if(result.containsKey(key)==true)
-                    result.put(key, value+ result.get(key));
+            Integer key= newentry.getKey(); //the power of the monomial
+            Double value= newentry.getValue(); //the coefficient of the monomial
+                if(result.containsKey(key)==true) //we check if we have the same key in the polynomial
+                    result.put(key, value+ result.get(key)); //if true, we add the coeff
                 else
                     result.put(key,value);
                 if(result.get(key)==0.0)
                 {
-                    result.remove(key);
+                    result.remove(key); //if the coefficient generated is 0, we eliminate it
                 }
 
         }
@@ -35,7 +35,7 @@ public class Operations {
             Integer key= newentry.getKey();
             Double value= newentry.getValue();
             if(result.containsKey(key)==true)
-                result.put(key, value- result.get(key));
+                result.put(key, result.get(key)-value);
             else
                 result.put(key,value);
             if(result.get(key)==0.0)
@@ -51,7 +51,7 @@ public class Operations {
         HashMap<Integer,Double> result=new HashMap<>();
 
         for(Map.Entry<Integer,Double> newentry: P.coefficients.entrySet()){
-            Integer key= newentry.getKey();
+            Integer key= newentry.getKey(); //variables that get the key and the value
             Double value= newentry.getValue();
             if(key!=0) {
                 result.put(newentry.getKey()-1, value*key);
