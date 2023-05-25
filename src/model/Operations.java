@@ -40,7 +40,7 @@ public class Operations {
                 result.put(key,value);
             if(result.get(key)==0.0)
             {
-                result.remove(key);
+                result.remove(key); //we remove the key
             }
 
         }
