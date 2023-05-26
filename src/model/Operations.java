@@ -8,14 +8,14 @@ import java.util.Iterator;
 public class Operations {
 
     public static Polynomial Addition(Polynomial P1, Polynomial P2){
-        HashMap<Integer,Double> result=new HashMap<>();
+        HashMap<Integer,Double> result=new HashMap<>(); //we will create a new HashMap where we insert the values of the first polynomial
         result.putAll(P1.getCoefficients());
 
         for(Map.Entry<Integer,Double> newentry: P2.coefficients.entrySet()){
             Integer key= newentry.getKey(); //the power of the monomial
             Double value= newentry.getValue(); //the coefficient of the monomial
                 if(result.containsKey(key)==true) //we check if we have the same key in the polynomial
-                    result.put(key, value+ result.get(key)); //if true, we add the coeff
+                    result.put(key, value+ result.get(key)); //if true, we add the values(coefficients)
                 else
                     result.put(key,value);
                 if(result.get(key)==0.0)
@@ -35,7 +35,7 @@ public class Operations {
             Integer key= newentry.getKey();
             Double value= newentry.getValue();
             if(result.containsKey(key)==true)
-                result.put(key, result.get(key)-value);
+                result.put(key,result.get(key)-value);
             else
                 result.put(key,value);
             if(result.get(key)==0.0)
